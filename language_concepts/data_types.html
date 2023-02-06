@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Data Types - The Noir Programming Language</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+                <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">The Noir Programming Language</a></li><li class="chapter-item expanded "><a href="../getting_started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started/nargo.html"><strong aria-hidden="true">1.1.</strong> Nargo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started/nargo/installation.html"><strong aria-hidden="true">1.1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../getting_started/nargo/commands.html"><strong aria-hidden="true">1.1.2.</strong> Commands</a></li></ol></li><li class="chapter-item expanded "><a href="../getting_started/hello_world.html"><strong aria-hidden="true">1.2.</strong> Hello, World</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started/breakdown.html"><strong aria-hidden="true">1.2.1.</strong> Breakdown</a></li></ol></li><li class="chapter-item expanded "><a href="../getting_started/solidity_verifier.html"><strong aria-hidden="true">1.3.</strong> Solidity Verifier</a></li><li class="chapter-item expanded "><a href="../getting_started/typescript.html"><strong aria-hidden="true">1.4.</strong> TypeScript</a></li><li class="chapter-item expanded "><a href="../getting_started/merkle-proof.html"><strong aria-hidden="true">1.5.</strong> Merkle Proof</a></li></ol></li><li class="chapter-item expanded "><a href="../language_concepts.html"><strong aria-hidden="true">2.</strong> Language Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../language_concepts/mutability.html"><strong aria-hidden="true">2.1.</strong> Mutability</a></li><li class="chapter-item expanded "><a href="../language_concepts/data_types.html" class="active"><strong aria-hidden="true">2.2.</strong> Data Types</a></li><li class="chapter-item expanded "><a href="../language_concepts/functions.html"><strong aria-hidden="true">2.3.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../language_concepts/comments.html"><strong aria-hidden="true">2.4.</strong> Comments</a></li><li class="chapter-item expanded "><a href="../language_concepts/control_flow.html"><strong aria-hidden="true">2.5.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../language_concepts/ops.html"><strong aria-hidden="true">2.6.</strong> Operations</a></li><li class="chapter-item expanded "><a href="../language_concepts/constrain.html"><strong aria-hidden="true">2.7.</strong> Constrain Statement</a></li></ol></li><li class="chapter-item expanded "><a href="../modules_packages_crates.html"><strong aria-hidden="true">3.</strong> Modules, Packages, Crates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../modules_packages_crates/crate.html"><strong aria-hidden="true">3.1.</strong> Crate</a></li><li class="chapter-item expanded "><a href="../modules_packages_crates/packages.html"><strong aria-hidden="true">3.2.</strong> Packages</a></li><li class="chapter-item expanded "><a href="../modules_packages_crates/modules.html"><strong aria-hidden="true">3.3.</strong> Modules</a></li><li class="chapter-item expanded "><a href="../modules_packages_crates/dependencies.html"><strong aria-hidden="true">3.4.</strong> Dependencies</a></li></ol></li><li class="chapter-item expanded "><a href="../acir.html"><strong aria-hidden="true">4.</strong> ACIR</a></li><li class="chapter-item expanded "><a href="../c_overview.html"><strong aria-hidden="true">5.</strong> Compilation Overview</a></li><li class="chapter-item expanded "><a href="../coming_soon.html"><strong aria-hidden="true">6.</strong> Coming!</a></li><li class="chapter-item expanded "><a href="../license.html"><strong aria-hidden="true">7.</strong> LICENSE</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">The Noir Programming Language</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="data-types"><a class="header" href="#data-types">Data Types</a></h1>
+<p>Every value in Noir has a type, which determines which operations are valid for it.</p>
+<p>All values in Noir are fundamentally composed of <code>Field</code> elements. For a more approachable developing experience, abstractions are added on top to introduce different data types in Noir.</p>
+<p>Noir has two category of data types: primitive types (e.g. <code>Field</code>, integers, <code>bool</code>) and compound types that group primitive types (e.g. arrays, tuples, structs). Each value can either be private or public.</p>
+<h2 id="private--public-types"><a class="header" href="#private--public-types">Private &amp; Public Types</a></h2>
+<p>A <strong>private value</strong> is known only to the Prover, while a <strong>public value</strong> is known by both the Prover and Verifier. All primitive types (including individual fields of compound types) in Noir are private by default, and can be marked public when certain values are intended to be revealed to the Verifier.</p>
+<blockquote>
+<p><strong>Note:</strong> For public values defined in Noir programs paired with smart contract verifiers, once the proofs are verified on-chain the values can be considered known to everyone that has access to that blockchain.</p>
+</blockquote>
+<p>Public data types are treated no differently to private types apart from the fact that their values will be revealed in proofs generated. Simply changing the value of a public type will not change the circuit (where the same goes for changing values of private types as well).</p>
+<p><em>Private values</em> are also referred to as <em>witnesses</em> sometimes.</p>
+<blockquote>
+<p><strong>Note:</strong> The terms private and public when applied to a type (e.g. <code>pub Field</code>) have a different meaning than when applied to a function (e.g. <code>pub fn foo() {}</code>).</p>
+<p>The former is a visibility modifier for the Prover to interpret if a value should be made known to the Verifier, while the latter is a visibility modifier for the compiler to interpret if a function should be made accessible to external Noir programs like in other languages.</p>
+</blockquote>
+<h3 id="pub-modifier"><a class="header" href="#pub-modifier">pub Modifier</a></h3>
+<p>All data types in Noir are private by default. Types are explicitly declared as public using the <code>pub</code> modifier:</p>
+<pre><code class="language-rust noplaypen">fn main(x : Field, y : pub Field) -&gt; pub Field {
+    x + y
+}
+</code></pre>
+<p>In this example, <code>x</code> is <strong>private</strong> while <code>y</code> and <code>x + y</code> (the return value) are <strong>public</strong>. Note that visibility is handled <strong>per variable</strong>, so it is perfectly valid to have one input that is private and another that is public.</p>
+<blockquote>
+<p><strong>Note:</strong> Public types can only be declared through parameters on <code>main</code>.</p>
+</blockquote>
+<h2 id="primitive-types"><a class="header" href="#primitive-types">Primitive Types</a></h2>
+<p>A primitive type represents a single value. They can be private or public.</p>
+<h3 id="the-field-type"><a class="header" href="#the-field-type">The Field Type</a></h3>
+<p>The field type corresponds to the native field type of the proving backend.</p>
+<p>The size of a Noir field depends on the elliptic curve's finite field for the proving backend adopted. For example, a field would be a 254-bit integer when paired with the default TurboPlonk backend that spans the Grumpkin curve.</p>
+<p>Fields support integer arithmetic and are often used as the default numeric type in Noir:</p>
+<pre><code class="language-rust noplaypen">fn main(x : Field, y : Field)  {
+    let z = x + y;
+}
+</code></pre>
+<p><code>x</code>, <code>y</code> and <code>z</code> are all private fields in this example. Using the <code>let</code> keyword we defined a new private value <code>z</code> constrained to be equal to <code>x + y</code>.</p>
+<p>If proving efficiency is of priority, fields should be used as a default for solving problems. Smaller integer types (e.g. <code>u64</code>) incur extra range constraints.</p>
+<h3 id="integer-types"><a class="header" href="#integer-types">Integer Types</a></h3>
+<p>An integer type is a range constrained field type. The Noir frontend currently supports unsigned, arbitrary-sized integer types.</p>
+<p>An integer type is specified first with the letter <code>u</code>, indicating its unsigned nature, followed by its length in bits (e.g. <code>32</code>). For example, a <code>u32</code> variable can store a value in the range of \([0,2^{32}-1]\):</p>
+<pre><code class="language-rust noplaypen">fn main(x : Field, y : u32) {
+    let z = x as u32 + y;
+}
+</code></pre>
+<p><code>x</code>, <code>y</code> and <code>z</code> are all private values in this example. However, <code>x</code> is a field while <code>y</code> and <code>z</code> are unsigned 32-bit integers. If <code>y</code> or <code>z</code> exceeds the range \([0,2^{32}-1]\), proofs created will be rejected by the verifier.</p>
+<blockquote>
+<p><strong>Note:</strong> The default TurboPlonk backend supports both even (e.g. <code>u16</code>, <code>u48</code>) and odd (e.g. <code>u5</code>, <code>u3</code>) sized integer types.</p>
+</blockquote>
+<h3 id="the-boolean-type"><a class="header" href="#the-boolean-type">The Boolean Type</a></h3>
+<p>The <code>bool</code> type in Noir has two possible values: <code>true</code> and <code>false</code>:</p>
+<pre><code class="language-rust noplaypen">fn main() {
+    let t = true;
+    let f: bool = false;
+}
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> When returning a boolean value, it will show up as a value of 1 for <code>true</code> and 0 for <code>false</code> in <em>Verifier.toml</em>.</p>
+</blockquote>
+<p>The boolean type is most commonly used in conditionals like <code>if</code> expressions and <code>constrain</code> statements. More about conditionals is covered in the <a href="./control_flow.html">Control Flow</a> and <a href="./constrain.html">Constrain Statement</a> sections.</p>
+<h2 id="compound-types"><a class="header" href="#compound-types">Compound Types</a></h2>
+<p>A compound type groups together multiple values into one type. Elements within a compound type can be private or public.</p>
+<h3 id="the-array-type"><a class="header" href="#the-array-type">The Array Type</a></h3>
+<p>An array is one way of grouping together values into one compound type. Array types can be inferred or explicitly specified via the syntax <code>[&lt;Type&gt;; &lt;Size&gt;]</code>:</p>
+<pre><code class="language-rust noplaypen">fn main(x : Field, y : Field) {
+    let my_arr = [x, y];
+    let your_arr: [Field; 2] = [x, y];
+}
+</code></pre>
+<p>Here, both <code>my_arr</code> and <code>your_arr</code> are instantiated as an array containing two <code>Field</code> elements.</p>
+<p>Array elements can be accessed using indexing:</p>
+<pre><code class="language-rust noplaypen">fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    let first = a[0];
+    let second = a[1];
+}
+</code></pre>
+<p>All elements in an array must be of the same type (i.e. homogeneous). That is, an array cannot group a <code>Field</code> value and a <code>u8</code> value together for example.</p>
+<h3 id="the-tuple-type"><a class="header" href="#the-tuple-type">The Tuple Type</a></h3>
+<p>A tuple collects multiple values like an array, but with the added ability to collect values of different types:</p>
+<pre><code class="language-rust noplaypen">fn main() {
+    let tup: (u8, u64, Field) = (255, 500, 1000);
+}
+</code></pre>
+<p>One way to access tuple elements is via destructuring using pattern matching:</p>
+<pre><code class="language-rust noplaypen">fn main() {
+    let tup = (1, 2);
+
+    let (one, two) = tup;
+
+    let three = one + two;
+}
+</code></pre>
+<p>Another way to access tuple elements is via direct member access, using a period (<code>.</code>) followed by the index of the element we want to access. Index <code>0</code> corresponds to the first tuple element, <code>1</code> to the second and so on:</p>
+<pre><code class="language-rust noplaypen">fn main() {
+    let tup = (5, 6, 7, 8);
+
+    let five = tup.0;
+    let eight = tup.3;
+}
+</code></pre>
+<h3 id="structs"><a class="header" href="#structs">Structs</a></h3>
+<p>A struct also allows for grouping multiple values of different types. Unlike tuples, we can also name each field.</p>
+<blockquote>
+<p><strong>Note:</strong> The usage of <em>field</em> here refers to each element of the struct and is unrelated to the field type of Noir.</p>
+</blockquote>
+<p>Defining a struct requires giving it a name and listing each field within as <code>&lt;Key&gt;: &lt;Type&gt;</code> pairs:</p>
+<pre><code class="language-rust noplaypen">struct Animal {
+    hands: Field,
+    legs: Field,
+    eyes: u8,
+}
+</code></pre>
+<p>An instance of a struct can then be created with actual values in <code>&lt;Key&gt;: &lt;Value&gt;</code> pairs in any order. Struct fields are accessible using their given names:</p>
+<pre><code class="language-rust noplaypen">fn main() {
+    let legs = 4;
+
+    let dog = Animal {
+        eyes: 2,
+        hands: 0,
+        legs,
+    };
+
+    let zero = dog.hands;
+}
+</code></pre>
+<p>Structs can also be destructured in a pattern, binding each field to a new variable:</p>
+<pre><code class="language-rust noplaypen">fn main() {
+    let Animal { hands, legs: feet, eyes } = get_octopus();
+
+    let ten = hands + feet + eyes as u8;
+}
+
+fn get_octopus() -&gt; Animal {
+    let octopus = Animal {
+        hands: 0,
+        legs: 8,
+        eyes: 2,
+    };
+
+    octopus
+}
+</code></pre>
+<p>The new variables can be bound with names different from the original struct field names, as showcased in the <code>legs --&gt; feet</code> binding in the example above.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../language_concepts/mutability.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../language_concepts/functions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../language_concepts/mutability.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../language_concepts/functions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
